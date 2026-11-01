@@ -4,179 +4,389 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ELIN — Mirror of Tomorrow</title>
+
 <style>
-:root{
-  --bg:#070b1d;--panel:#111a35;--cyan:#66f5ff;
-  --purple:#a78bfa;--text:#edf3ff;--muted:#aab6d5;
+:root {
+  --bg: #070b1d;
+  --panel: #111a35;
+  --cyan: #66f5ff;
+  --purple: #a78bfa;
+  --text: #edf3ff;
+  --muted: #aab6d5;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;color:var(--text);
-  font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: system-ui, sans-serif;
   background:
-  radial-gradient(ellipse at 15% 15%,#18245b 0,transparent 40%),
-  radial-gradient(ellipse at 85% 70%,#29144f 0,transparent 40%),
-  var(--bg);
-  min-height:100vh;
+    radial-gradient(ellipse at 15% 15%, #18245b, transparent 40%),
+    radial-gradient(ellipse at 85% 70%, #29144f, transparent 40%),
+    var(--bg);
+  min-height: 100vh;
 }
-header{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 6%;border-bottom:1px solid #293455;
-  position:sticky;top:0;background:#070b1ddd;backdrop-filter:blur(12px);
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 5%;
+  border-bottom: 1px solid #293455;
+  background: #070b1ddd;
 }
-.logo{font-size:25px;font-weight:900;letter-spacing:4px;color:var(--cyan)}
-nav{display:flex;gap:15px;align-items:center}
-button,select{
-  background:#172344;color:var(--text);border:1px solid #43517a;
-  border-radius:10px;padding:10px 14px;font:inherit;cursor:pointer;
+
+.logo {
+  color: var(--cyan);
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 4px;
 }
-button:hover{border-color:var(--cyan)}
-main{max-width:1000px;margin:auto;padding:28px 18px}
-.hero{text-align:center;padding:65px 10px 45px}
-.planet{
-  width:110px;height:110px;margin:0 auto 24px;border-radius:50%;
-  background:radial-gradient(circle at 30% 25%,#b6ffff,#4d70e8 45%,#26104d 80%);
-  box-shadow:0 0 45px #66f5ff66,0 0 100px #9474ff33;
+
+button, select {
+  color: var(--text);
+  background: #172344;
+  border: 1px solid #43517a;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font: inherit;
+  cursor: pointer;
 }
-h1{font-size:clamp(35px,8vw,65px);margin:10px 0}
-h1 span{color:var(--cyan)}
-p{line-height:1.8;color:var(--muted)}
-.hero p{max-width:650px;margin:15px auto}
-.card{
-  background:linear-gradient(145deg,#121c39ee,#0c1229ee);
-  border:1px solid #344267;border-radius:18px;padding:22px;margin:18px 0;
+
+button:hover {
+  border-color: var(--cyan);
 }
-h2{margin-top:0;color:var(--cyan)}
-.warning{border-color:#8e568b}
-.warning h2{color:#ffb6e5}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-label{display:block;margin:14px 0;color:var(--text)}
-input[type=checkbox]{accent-color:var(--cyan);margin-right:9px}
-.result{font-size:18px;font-weight:700;margin-top:15px}
-footer{text-align:center;padding:35px 15px;color:var(--muted);font-size:13px}
-a{color:var(--cyan)}
-.hidden{display:none}
+
+main {
+  max-width: 950px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 55px 10px;
+}
+
+.planet {
+  width: 115px;
+  height: 115px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 25%,
+    #b6ffff,
+    #4d70e8 45%,
+    #26104d 80%
+  );
+  box-shadow: 0 0 45px #66f5ff66;
+}
+
+h1 {
+  font-size: clamp(32px, 8vw, 58px);
+  margin: 12px 0;
+}
+
+h1 span {
+  color: var(--cyan);
+}
+
+p {
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.card {
+  background: linear-gradient(145deg, #121c39ee, #0c1229ee);
+  border: 1px solid #344267;
+  border-radius: 18px;
+  padding: 22px;
+  margin: 18px 0;
+}
+
+h2 {
+  color: var(--cyan);
+  margin-top: 0;
+}
+
+.warning {
+  border-color: #8e568b;
+}
+
+.warning h2 {
+  color: #ffb6e5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+label {
+  display: block;
+  padding: 12px;
+  border: 1px solid #344267;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--cyan);
+  margin-right: 8px;
+  transform: scale(1.15);
+}
+
+.result {
+  margin-top: 18px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #172344;
+  line-height: 1.8;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: var(--muted);
+  font-size: 13px;
+}
 </style>
 </head>
+
 <body>
+
 <header>
   <div class="logo">ELIN</div>
-  <nav>
-    <select id="language" aria-label="Language">
-      <option value="bn">বাংলা</option>
-      <option value="en">English</option>
-    </select>
-  </nav>
+
+  <select id="language" aria-label="Language">
+    <option value="bn">বাংলা</option>
+    <option value="en">English</option>
+  </select>
 </header>
 
 <main>
+
 <section class="hero">
   <div class="planet"></div>
-  <div id="eyebrow">আগামীর প্রতিচ্ছবি</div>
+
+  <p id="eyebrow">আগামীর প্রতিচ্ছবি</p>
+
   <h1>ELIN — <span>Mirror of Tomorrow</span></h1>
-  <p id="intro">সত্যকে চিনুন। প্রতারণা থেকে সতর্ক থাকুন। অনলাইনে সম্পর্ক গড়ুন সচেতনভাবে।</p>
-  <button onclick="document.getElementById('check').scrollIntoView({behavior:'smooth'})" id="start">
+
+  <p id="intro">
+    সত্যকে চিনুন। প্রতারণা থেকে সতর্ক থাকুন।
+    অনলাইনে সম্পর্ক গড়ুন সচেতনভাবে।
+  </p>
+
+  <button id="startButton">
     সতর্কতা যাচাই শুরু করুন
   </button>
 </section>
 
 <section class="card warning">
   <h2 id="warningTitle">⚠️ ELIN সতর্ক বার্তা</h2>
-  <p id="warningText">অনলাইনে পরিচিত কেউ দ্রুত ভালোবাসা প্রকাশ করলে, টাকা চাইলে, ব্যক্তিগত ছবি চাইলে বা পরিচয় যাচাই এড়িয়ে গেলে সতর্ক থাকুন। কারও ছবি বা কথার ভিত্তিতে একা সিদ্ধান্ত নেবেন না।</p>
+
+  <p id="warningText">
+    অনলাইনে পরিচিত কেউ দ্রুত ভালোবাসা প্রকাশ করলে,
+    টাকা চাইলে, ব্যক্তিগত ছবি চাইলে বা পরিচয় যাচাই
+    এড়িয়ে গেলে সতর্ক থাকুন।
+  </p>
 </section>
 
 <section class="card" id="check">
   <h2 id="checkTitle">সম্পর্কের ঝুঁকি যাচাই</h2>
-  <p id="checkDesc">আপনার অভিজ্ঞতার সঙ্গে মেলে এমন বিষয়গুলো নির্বাচন করুন। এটি নিশ্চিত প্রতারণা শনাক্তকারী নয়—সতর্কতার সহায়ক।</p>
+
+  <p id="checkDesc">
+    আপনার অভিজ্ঞতার সঙ্গে মেলে এমন বিষয় নির্বাচন করুন।
+    এটি সতর্কতার সহায়ক, নিশ্চিত প্রতারণা শনাক্তকারী নয়।
+  </p>
 
   <div class="grid">
-    <label><input type="checkbox" class="risk"> <span data-bn="দ্রুত ভালোবাসা বা বিয়ের চাপ দিচ্ছে" data-en="Rushing love or marriage">দ্রুত ভালোবাসা বা বিয়ের চাপ দিচ্ছে</span></label>
-    <label><input type="checkbox" class="risk"> <span data-bn="টাকা, উপহার বা জরুরি সাহায্য চাইছে" data-en="Asking for money, gifts, or urgent help">টাকা, উপহার বা জরুরি সাহায্য চাইছে</span></label>
-    <label><input type="checkbox" class="risk"> <span data-bn="ভিডিও কলে আসতে বা পরিচয় যাচাই করতে চায় না" data-en="Avoiding video calls or identity checks">ভিডিও কলে আসতে বা পরিচয় যাচাই করতে চায় না</span></label>
-    <label><input type="checkbox" class="risk"> <span data-bn="ব্যক্তিগত বা অন্তরঙ্গ ছবি চাইছে" data-en="Asking for private or intimate images">ব্যক্তিগত বা অন্তরঙ্গ ছবি চাইছে</span></label>
-    <label><input type="checkbox" class="risk"> <span data-bn="গোপন রাখতে বা পরিবার-বন্ধু থেকে দূরে থাকতে বলছে" data-en="Pressuring secrecy or isolation">গোপন রাখতে বা পরিবার-বন্ধু থেকে দূরে থাকতে বলছে</span></label>
-    <label><input type="checkbox" class="risk"> <span data-bn="কথায় অসঙ্গতি বা বারবার গল্প বদলাচ্ছে" data-en="Stories change or details contradict">কথায় অসঙ্গতি বা বারবার গল্প বদলাচ্ছে</span></label>
-  <button id="checkButton" onclick="checkRisk()">ফলাফল দেখুন</button>
+
+    <label>
+      <input type="checkbox" class="risk">
+      <span data-bn="দ্রুত ভালোবাসা বা বিয়ের চাপ দিচ্ছে"
+            data-en="Rushing love or marriage">
+        দ্রুত ভালোবাসা বা বিয়ের চাপ দিচ্ছে
+      </span>
+    </label>
+
+    <label>
+      <input type="checkbox" class="risk">
+      <span data-bn="টাকা বা জরুরি সাহায্য চাইছে"
+            data-en="Asking for money or urgent help">
+        টাকা বা জরুরি সাহায্য চাইছে
+      </span>
+    </label>
+
+    <label>
+      <input type="checkbox" class="risk">
+      <span data-bn="ভিডিও কল বা পরিচয় যাচাই এড়িয়ে যায়"
+            data-en="Avoiding video calls or identity checks">
+        ভিডিও কল বা পরিচয় যাচাই এড়িয়ে যায়
+      </span>
+    </label>
+
+    <label>
+      <input type="checkbox" class="risk">
+      <span data-bn="ব্যক্তিগত ছবি চাইছে"
+            data-en="Asking for private images">
+        ব্যক্তিগত ছবি চাইছে
+      </span>
+    </label>
+
+    <label>
+      <input type="checkbox" class="risk">
+      <span data-bn="সম্পর্ক গোপন রাখতে বলছে"
+            data-en="Pressuring you to keep the relationship secret">
+        সম্পর্ক গোপন রাখতে বলছে
+      </span>
+    </label>
+
+    <label>
+      <input type="checkbox" class="risk">
+      <span data-bn="কথায় অসঙ্গতি বা বারবার গল্প বদলায়"
+            data-en="Stories change or details contradict">
+        কথায় অসঙ্গতি বা বারবার গল্প বদলায়
+      </span>
+    </label>
+
+  </div>
+
+  <button id="checkButton" style="margin-top:18px">
+    ফলাফল দেখুন
+  </button>
+
+  <div id="result" class="result" hidden aria-live="polite"></div>
+</section>
 
 <section class="card">
   <h2 id="guideTitle">নিজেকে নিরাপদ রাখুন</h2>
+
   <ul id="guide">
     <li>টাকা পাঠানোর আগে বিশ্বস্ত কারও সঙ্গে আলোচনা করুন।</li>
     <li>ব্যক্তিগত ছবি, পাসওয়ার্ড বা OTP শেয়ার করবেন না।</li>
-    <li>পরিচয় যাচাই করুন—তবে ছবি বা ভিডিওও সম্পূর্ণ প্রমাণ নয়।</li>
-    <li>সন্দেহ হলে যোগাযোগ বন্ধ করুন, প্রমাণ রাখুন এবং প্ল্যাটফর্মে রিপোর্ট করুন।</li>
+    <li>পরিচয় যাচাই করুন—ছবি বা ভিডিওও সম্পূর্ণ প্রমাণ নয়।</li>
+    <li>সন্দেহ হলে যোগাযোগ বন্ধ করুন এবং রিপোর্ট করুন।</li>
   </ul>
 </section>
 
 <section class="card">
-  <h2 id="aiTitle">ELIN AI Agent</h2>
-  <p id="aiText">AI সহায়তা ভবিষ্যতে যুক্ত করা যাবে। এই প্রকাশিত প্রাথমিক সংস্করণে কোনো ছবি বা ভিডিও সার্ভারে পাঠানো হয় না এবং AI বিশ্লেষণ চালু নেই।</p>
+  <h2>ELIN AI Agent</h2>
+
+  <p id="aiText">
+    AI Agent এবং ছবি/ভিডিও বিশ্লেষণ ভবিষ্যতে নিরাপদ
+    সার্ভারের মাধ্যমে যুক্ত করা হবে। এই সংস্করণে
+    AI বিশ্লেষণ চালু নেই।
+  </p>
 </section>
+
 </main>
 
 <footer>
   ELIN — Mirror of Tomorrow<br>
-  <span id="footerText">সচেতনতা ও নিরাপত্তার জন্য তৈরি। ELIN কোনো ব্যক্তিকে নিশ্চিতভাবে প্রতারক ঘোষণা করে না।</span>
+  <span id="footerText">
+    সচেতনতা ও নিরাপত্তার জন্য তৈরি।
+    ELIN কাউকে নিশ্চিতভাবে প্রতারক ঘোষণা করে না।
+  </span>
 </footer>
 
 <script>
-function checkRisk(){
-  const count=document.querySelectorAll(".risk:checked").length;
-  const result=document.getElementById("result");
-  const en=document.getElementById("language").value==="en";
-  if(count===0){
-    result.textContent=en
-      ?"No warning signs selected. Stay cautious; this is not proof of safety."
-      :"কোনো সতর্কতার বিষয় নির্বাচন করেননি। তবুও সচেতন থাকুন—এটি নিরাপত্তার নিশ্চয়তা নয়।";
-  }else if(count<=2){
-    result.textContent=en
-      ?"Some warning signs are present. Slow down and verify."
-      :"কিছু সতর্কতার লক্ষণ আছে। ধীরে এগোন এবং পরিচয় যাচাই করুন।";
-  }else{
-    result.textContent=en
-      ?"Several warning signs are present. Protect your information and consider stopping contact."
-      :"একাধিক সতর্কতার লক্ষণ আছে। ব্যক্তিগত তথ্য সুরক্ষিত রাখুন এবং যোগাযোগ বন্ধ করার কথা ভাবুন।";
+"use strict";
+
+const language = document.getElementById("language");
+const startButton = document.getElementById("startButton");
+const checkButton = document.getElementById("checkButton");
+const result = document.getElementById("result");
+
+startButton.addEventListener("click", function () {
+  document.getElementById("check").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+});
+
+checkButton.addEventListener("click", function () {
+  const count = document.querySelectorAll(".risk:checked").length;
+  const english = language.value === "en";
+
+  result.hidden = false;
+
+  if (count === 0) {
+    result.textContent = english
+      ? "No warning signs selected. Stay cautious. This is not proof of safety."
+      : "কোনো সতর্কতার বিষয় নির্বাচন করেননি। তবুও সচেতন থাকুন—এটি নিরাপত্তার নিশ্চয়তা নয়।";
+
+  } else if (count <= 2) {
+    result.textContent = english
+      ? "Some warning signs are present. Slow down and verify."
+      : "কিছু সতর্কতার লক্ষণ আছে। ধীরে এগোন এবং পরিচয় যাচাই করুন।";
+
+  } else {
+    result.textContent = english
+      ? "Several warning signs are present. Protect your information and consider stopping contact."
+      : "একাধিক সতর্কতার লক্ষণ আছে। ব্যক্তিগত তথ্য সুরক্ষিত রাখুন এবং যোগাযোগ বন্ধ করার কথা ভাবুন।";
   }
-}
-const translations={
-en:{
-eyebrow:"A reflection of tomorrow",
-intro:"Recognize truth. Stay alert to deception. Build online relationships mindfully.",
-start:"Start Safety Check",
-warningTitle:"⚠️ ELIN Safety Alert",
-warningText:"Be cautious if someone online declares love quickly, asks for money or private images, or avoids identity checks. Do not rely only on photos or words.",
-checkTitle:"Relationship Risk Check",
-checkDesc:"Select signs that match your experience. This is a safety aid, not a definitive scam detector.",
-checkButton:"Show Result",
-guideTitle:"Keep Yourself Safe",
-aiTitle:"ELIN AI Agent",
-aiText:"AI assistance can be connected in the future. This initial published version does not send images or videos to a server, and AI analysis is not active.",
-footerText:"Created for awareness and safety. ELIN does not definitively label anyone a scammer."
-},
-bn:{
-eyebrow:"আগামীর প্রতিচ্ছবি",
-intro:"সত্যকে চিনুন। প্রতারণা থেকে সতর্ক থাকুন। অনলাইনে সম্পর্ক গড়ুন সচেতনভাবে।",
-start:"সতর্কতা যাচাই শুরু করুন",
-warningTitle:"⚠️ ELIN সতর্ক বার্তা",
-warningText:"অনলাইনে পরিচিত কেউ দ্রুত ভালোবাসা প্রকাশ করলে, টাকা চাইলে, ব্যক্তিগত ছবি চাইলে বা পরিচয় যাচাই এড়িয়ে গেলে সতর্ক থাকুন। কারও ছবি বা কথার ভিত্তিতে একা সিদ্ধান্ত নেবেন না।",
-checkTitle:"সম্পর্কের ঝুঁকি যাচাই",
-checkDesc:"আপনার অভিজ্ঞতার সঙ্গে মেলে এমন বিষয়গুলো নির্বাচন করুন। এটি নিশ্চিত প্রতারণা শনাক্তকারী নয়—সতর্কতার সহায়ক।",
-checkButton:"ফলাফল দেখুন",
-guideTitle:"নিজেকে নিরাপদ রাখুন",
-aiTitle:"ELIN AI Agent",
-aiText:"AI সহায়তা ভবিষ্যতে যুক্ত করা যাবে। এই প্রকাশিত প্রাথমিক সংস্করণে কোনো ছবি বা ভিডিও সার্ভারে পাঠানো হয় না এবং AI বিশ্লেষণ চালু নেই।",
-footerText:"সচেতনতা ও নিরাপত্তার জন্য তৈরি। ELIN কোনো ব্যক্তিকে নিশ্চিতভাবে প্রতারক ঘোষণা করে না।"
-}};
-document.getElementById("language").addEventListener("change",function(){
- const t=translations[this.value];
- ["eyebrow","intro","start","warningTitle","warningText","checkTitle","checkDesc","checkButton","guideTitle","aiTitle","aiText","footerText"].forEach(id=>{
- document.getElementById(id).textContent=t[id];
- });
- document.querySelectorAll("[data-bn]").forEach(el=>{
- el.textContent=this.value==="en"?el.dataset.en:el.dataset.bn;
- });
- document.getElementById("result").textContent="";
+
+  result.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+});
+
+const translations = {
+  en: {
+    eyebrow: "A reflection of tomorrow",
+    intro: "Recognize truth. Stay alert to deception. Build online relationships mindfully.",
+    startButton: "Start Safety Check",
+    warningTitle: "⚠️ ELIN Safety Alert",
+    warningText: "Be cautious if someone online declares love quickly, asks for money or private images, or avoids identity checks.",
+    checkTitle: "Relationship Risk Check",
+    checkDesc: "Select signs that match your experience. This is a safety aid, not a definitive scam detector.",
+    checkButton: "Show Result",
+    guideTitle: "Keep Yourself Safe",
+    aiText: "The AI Agent and image/video analysis will be connected through a secure server in the future. AI analysis is not active in this version.",
+    footerText: "Created for awareness and safety. ELIN does not definitively label anyone a scammer."
+  },
+
+  bn: {
+    eyebrow: "আগামীর প্রতিচ্ছবি",
+    intro: "সত্যকে চিনুন। প্রতারণা থেকে সতর্ক থাকুন। অনলাইনে সম্পর্ক গড়ুন সচেতনভাবে।",
+    startButton: "সতর্কতা যাচাই শুরু করুন",
+    warningTitle: "⚠️ ELIN সতর্ক বার্তা",
+    warningText: "অনলাইনে পরিচিত কেউ দ্রুত ভালোবাসা প্রকাশ করলে, টাকা চাইলে, ব্যক্তিগত ছবি চাইলে বা পরিচয় যাচাই এড়িয়ে গেলে সতর্ক থাকুন।",
+    checkTitle: "সম্পর্কের ঝুঁকি যাচাই",
+    checkDesc: "আপনার অভিজ্ঞতার সঙ্গে মেলে এমন বিষয় নির্বাচন করুন। এটি সতর্কতার সহায়ক, নিশ্চিত প্রতারণা শনাক্তকারী নয়।",
+    checkButton: "ফলাফল দেখুন",
+    guideTitle: "নিজেকে নিরাপদ রাখুন",
+    aiText: "AI Agent এবং ছবি/ভিডিও বিশ্লেষণ ভবিষ্যতে নিরাপদ সার্ভারের মাধ্যমে যুক্ত করা হবে। এই সংস্করণে AI বিশ্লেষণ চালু নেই।",
+    footerText: "সচেতনতা ও নিরাপত্তার জন্য তৈরি। ELIN কাউকে নিশ্চিতভাবে প্রতারক ঘোষণা করে না।"
+  }
+};
+
+language.addEventListener("change", function () {
+  const t = translations[language.value];
+
+  Object.keys(t).forEach(function (id) {
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.textContent = t[id];
+    }
+  });
+
+  document.querySelectorAll("[data-bn]").forEach(function (element) {
+    element.textContent = language.value === "en"
+      ? element.dataset.en
+      : element.dataset.bn;
+  });
+
+  result.hidden = true;
+  result.textContent = "";
 });
 </script>
+
 </body>
-  </html>
+        </html>
